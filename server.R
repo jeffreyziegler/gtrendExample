@@ -11,11 +11,10 @@ library(RColorBrewer)
 # shiny app
 shinyServer(
   function(input, output, session){
-    
+    # login to google
+    gconnect(usr = "jeffreymziegler", psw = "Yahoo1010", verbose = FALSE)
     # Filter the isis data, returning a data frame with data to construct map
     map <- reactive({
-      # Due to dplyr issue #318, we need temp variables for input values
-      gconnect(usr = "jeffreymziegler", psw = "Yahoo101", verbose = FALSE)
       # create variable to change resolution of trending data
       # load data create input variables 
       isis <- gtrends("ISIS", res=input$time, geo="US")
