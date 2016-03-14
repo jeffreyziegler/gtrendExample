@@ -12,7 +12,7 @@ library(RColorBrewer)
 shinyServer(
   function(input, output, session){
     # login to google
-    gconnect(usr = "jeffreymziegler", psw = "Yahoo1010", verbose = FALSE)
+    gconnect(usr = "<Google Username>", psw = "<Google Password?>", verbose = FALSE)
     # Filter the isis data, returning a data frame with data to construct map
     map <- reactive({
       # create variable to change resolution of trending data
@@ -52,7 +52,7 @@ shinyServer(
     # Filter the isis data, returning a data frame with data to construct scatterplot
     scatter <- reactive({
       # Due to dplyr issue #318, we need temp variables for input values
-      gconnect(usr = "jeffreymziegler", psw = "Yahoo101", verbose = FALSE)
+      gconnect(usr = "<Google Username>", psw = "<Google Password?>", verbose = FALSE)
       # create variable to change resolution of trending data
       # load data create input variables 
       isis <- gtrends("ISIS", res=input$time, geo="US")
