@@ -17,11 +17,12 @@ shinyUI(
     titlePanel("Web Search interest: 'ISIS'"),
     sidebarLayout(position = "left",
       sidebarPanel(
-        wellPanel(selectInput(
-          # label the selection box
-          "time", "Select time frame of search",
-          # choose timePeriod
-          c("1h", "4h", "1d", "7d"))
+        wellPanel(
+          selectInput(
+            # label the selection box
+            "time", "Select time frame of search",
+            # choose timePeriod
+            c("1h", "4h", "1d", "7d"))
         ),
         # trend output
         ggvisOutput("plot1")
